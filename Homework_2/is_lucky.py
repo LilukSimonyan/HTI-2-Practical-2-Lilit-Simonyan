@@ -1,6 +1,6 @@
 s = input('Enter your ticket number or exit to finish: ')
 
-while str(s) != 'exit':
+while s != 'exit':
     while int(s) < 10 or int(s) > 99999999 or len(s) % 2 != 0:
         print('Please, enter correct number!')
         s = input('Enter your ticket number or exit to finish: ')

@@ -4,10 +4,10 @@ for i in range(1, len(s)):
     a = s[i - 1]
     b = s[i]
     c = a * b
-    if c < product:
-        product = product
-    else:
+    if c > product:
         product = c
+    else:
+        product = product
 print(product)
 
 

@@ -6,8 +6,6 @@ for i in range(1, len(s)):
     c = a * b
     if c > product:
         product = c
-    else:
-        product = product
 print(product)
 
 

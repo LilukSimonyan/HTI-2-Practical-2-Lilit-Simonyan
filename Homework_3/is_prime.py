@@ -8,6 +8,7 @@ def prime(n):
     for i in range(1, n - 2):
         if n % (i + 1) == 0:
             is_prime = False
+            break
     if is_prime:
         return 'Yes'
     if not is_prime:

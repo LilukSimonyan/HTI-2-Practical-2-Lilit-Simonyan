@@ -1,4 +1,4 @@
-def intermediate(n): #78996
+def intermediate(n):
     root_str = str(n)
     sum = 0
 
@@ -11,11 +11,7 @@ def root(n):
         sum = 0
         intermediate(n)
     else:
-        print(intermediate(n))
+        return intermediate(n)
 
-root(78996)
-root(10)
-root(8)
-root(37100005)
-root(55)
-root(0)
+n = int(input("Let's find a root of number: "))
+print(root(n))

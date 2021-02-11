@@ -19,18 +19,16 @@ def game():
     guess = ['_ '] * l
     indefinite_letter = '_ '
     while step != 0:
-        letter = input(f'Guess the word. {step} mistakes left.\n{"".join(guess)}\nGuess a letter: ').lower()
-        if letter in word:
+        if indefinite_letter not in guess:
+            return f'{"".join(guess)}\nYou won the game.'
+        else:
+            letter = input(f'Guess the word. {step} mistakes left.\n{"".join(guess)}\nGuess a letter: ').lower()
             for i in range(l):
                 if letter == word[i]:
                     guess[i] = (word[i]+" ").upper()
-                    if indefinite_letter not in guess:
-                        return f'{"".join(guess)}\nYou won the game.'
-        else:
-            step -= 1
+                else:
+                    step -= 1
     else:
         return "You lost the game."
 
 print(game())
-
-

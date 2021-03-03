@@ -7,7 +7,7 @@ def warn_slow(func):
         result = func(*args)
         duration = time.time() - start
         if duration > 2:
-            print(f'It took {duration} seconds, {func.__name__}') #{արգումենտի համար չգտա ինչպես ստանալ}
+            print(f'It took {duration} seconds, {func.__name__} function arguments are --> {args}')
         return result
     return inner
 
@@ -26,7 +26,8 @@ def func_slow(n):
 
 @warn_slow
 def func_fast(x, y, z):
-    print(f'Result of func_fast function is {x*y}')
+    s = x*y
+    print(f'Result of func_fast function is {s}')
 
 func_slow(5)
 print()

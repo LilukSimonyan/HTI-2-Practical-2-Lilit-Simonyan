@@ -48,7 +48,7 @@ class Pensioner:
 
     @staticmethod
     def pension_formula():
-        return 'pension = basic + (experience * cost_of_one_year_experience) * coefficient'
+        return 'pension = basic + (9500 + (experience -10) * cost_of_one_year_experience) * coefficient'
 
 
 class DisabilityEmploymentPension1(Pensioner):  # first group Disability
@@ -62,7 +62,7 @@ class DisabilityEmploymentPension1(Pensioner):  # first group Disability
 
 
 class DisabilityEmploymentPension2(Pensioner):  # second group Disability
-    def __init__(self, first_name, last_name, __person_id=None, psn=None, group_type=2):
+    def __init__(self, first_name, last_name,group_type=2):
         super(DisabilityEmploymentPension2, self).__init__(first_name, last_name)
         self.group_type = group_type
 
@@ -78,19 +78,18 @@ class DisabilityEmploymentPension3(Pensioner): # first group
 
 p1 = Pensioner("Tigran", "Simonyan")
 p1.experience = 45
-print(p1.full_name)
+print(f'Pensioner: {p1.full_name} Experience: {p1._experience}')
 # print(p1.coefficient)
-print(p1.pension_amount)
+print(f'Pension amount: {p1.pension_amount}')
 p2 = DisabilityEmploymentPension1("Poghos", "Poghosyan")
 p2.experience = 45
-print(p2.full_name)
+print(f'Pensioner: {p2.full_name} Experience: {p2._experience} Disability group: {p2.group_type}')
 # print(p2.coefficient)
-print(p2.pension_amount)
-p2 = DisabilityEmploymentPension2("Poghos", "Poghosyan")
-p2.experience = 45
-print(p2.full_name)
+print(f'Pension amount: {p2.pension_amount}')
+p3 = DisabilityEmploymentPension2("Petros", "Petrosyan")
+p3.experience = 45
+print(f'Pensioner: {p3.full_name} Experience: {p3._experience} Disability group: {p3.group_type}')
 # print(p2.coefficient)
-print(p2.pension_amount)
-
-
+print(f'Pension amount: {p3.pension_amount}')
+print(Pensioner.pension_formula)
 
